@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para mi Sharol 💗</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f2, #fff0f6);
+      color: #444;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #ffb6c1;
+      color: white;
+      padding: 25px 10px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      padding: 30px 20px;
+    }
+
+    .kitty {
+      width: 120px;
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 2.3rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 15px rgba(255,182,193,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      background: #ffb6c1;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ffb6c1;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) scale(1); opacity: 1; }
+      100% { transform: translateY(100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts" id="hearts"></div>
+
+  <header>
+    Para mi Sharol 💗
+  </header>
+
+  <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png" alt="Hello Kitty" class="kitty" />
+
+    <h1>Eres mi persona favorita</h1>
+
+    <div class="card">
+      <p>
+        Sharol, esta página es solo para ti.  
+        Quise dejar aquí un pedacito de lo que siento cada vez que pienso en ti.  
+        Eres dulce, tierna y simplemente perfecta para mí.  
+      </p>
+      <p>
+        Cada día que pasa me doy cuenta de que tenerte en mi vida  
+        es lo más bonito que me ha pasado.  
+        Espero que cada vez que entres aquí recuerdes cuánto te quiero.  
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    Hecho con cariño solo para ti 💗
+  </footer>
+
+  <script>
+    const hearts = document.getElementById('hearts');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.textContent = '♥';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+      hearts.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
+
